@@ -4,7 +4,8 @@ Vue.config.devtools = true,
 new Vue({
     el :"#root",
     data:{
-     userEmail : "",   
+     userEmail : "",
+     userEmailList:[]   
     },
 
     
@@ -14,14 +15,31 @@ new Vue({
         //stampo la singola email a schermo
         const url = "https://flynn.boolean.careers/exercises/api/random/mail";
 
-        axios.get(url).then((ajaxResponse) =>{
+        //creo un ciclo for per riprodurre 10 volte il dato di url
+        for (let i = 0; i < 10; i++) {
 
-            console.log(ajaxResponse.data);
+            axios.get(url).then((ajaxResponse) =>{
 
-            const rispostaServer = ajaxResponse.data;
+                /*  console.log(ajaxResponse.data);*/
 
-            this.userEmail = rispostaServer.response; 
+                    //prendo l'informazioone che mi interessa all'interno del data
+                    const rispostaServer = ajaxResponse.data;
+
+                    //il valore di userEmail è la risposta che il server ci da nel data
+                    this.userEmail = rispostaServer.response; 
+                    /* console.log(this.userEmail) */
+
+                    //inserisco il risultato  della rispostadel server nel nuovo array
+                    this.userEmailList.push(this.userEmail)
+
+                    console.log(rispostaServer.response)
+                   /*  console.log(this.userEmailList) */
+
+
+                /*   console.log(this.userEmailList ) */
         });
+            
+        }
     },
     
 });

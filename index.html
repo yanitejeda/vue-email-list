@@ -16,8 +16,9 @@
     <!-- generare 10 indirizzi email e stamparli in pagina all’interno di una lista. -->
     <div id="root">
         <h1>Lista di email</h1>
-        <ul>
-            <li><!-- {{singleEmail}} -->{{userEmail}}</li>
+        <ul >
+             <li v-for='elenco in userEmailList'>{{elenco}}</li> 
+
         </ul>
 
     </div>
