@@ -16,9 +16,8 @@
     <!-- generare 10 indirizzi email e stamparli in pagina all’interno di una lista. -->
     <div id="root">
         <h1>Lista di email</h1>
-        <ul >
+        <ul v-if="numerChiamate >= 10">
              <li v-for='elenco in userEmailList'>{{elenco}}</li> 
-
         </ul>
 
     </div>

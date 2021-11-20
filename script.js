@@ -5,7 +5,8 @@ new Vue({
     el :"#root",
     data:{
      userEmail : "",
-     userEmailList:[]   
+     userEmailList:[],
+     numerChiamate :0   
     },
 
     
@@ -14,6 +15,7 @@ new Vue({
 
         //stampo la singola email a schermo
         const url = "https://flynn.boolean.careers/exercises/api/random/mail";
+
 
         //creo un ciclo for per riprodurre 10 volte il dato di url
         for (let i = 0; i < 10; i++) {
@@ -35,7 +37,7 @@ new Vue({
                     console.log(rispostaServer.response)
                    /*  console.log(this.userEmailList) */
 
-
+                this.numerChiamate++;
                 /*   console.log(this.userEmailList ) */
         });
             
