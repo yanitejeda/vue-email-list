@@ -10,7 +10,6 @@ new Vue({
     },
 
     
-    
     mounted (){
 
         //stampo la singola email a schermo
